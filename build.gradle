@@ -3,30 +3,25 @@
 buildscript {
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
     }
     dependencies {
         classpath 'com.android.tools.build:gradle:3.4.1'
         classpath "io.realm:realm-gradle-plugin:5.12.0"
+        classpath 'com.github.dcendents:android-maven-gradle-plugin:2.1'
 
         // NOTE: Do not place your application dependencies here; they belong
         // in the individual module build.gradle files
     }
+    group = 'com.github.sarhatabaot'
+    version = '1.0'
 }
+
+apply plugin: 'com.github.dcendents.android-maven'
 
 allprojects {
     repositories {
         jcenter()
-        maven {
-            url 'https://maven.google.com/'
-            name 'Google'
-        }
+        google()
     }
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }
